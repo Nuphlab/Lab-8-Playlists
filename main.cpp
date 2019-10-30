@@ -30,6 +30,7 @@ int main() {
             
             cout << "Enter your selection now:" << endl;
             cin >> userOption;
+            cout << userOption << userOption << endl; //remove test case
         }
         if (userOption == "add") {
             
@@ -73,6 +74,7 @@ int main() {
             
             cout << "Enter your selection now:" << endl;
             cin >> userOption;
+            cout << userOption << endl; //remove test case
         }
     }
     cout << "Goodbye!" << endl;
