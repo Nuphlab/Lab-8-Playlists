@@ -6,16 +6,15 @@
 #include <vector>
 using namespace std;
 
-class Song
-{
+class Song {
 public:
-   Song();
-   Song(string song, vector<Song*> newSong);
-   void AddSong(string name);
-   void ListSongs();
+    Song(string song = "", string firstLine = "");
+    string GetName();
+    string GetFirstLine();
 private:
-   string songName;
-   vector<Song*> songs;
+    string songName;
+    string songLine;
+    int count;
 };
 
 #endif 
