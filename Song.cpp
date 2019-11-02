@@ -1,11 +1,21 @@
 #include "Song.h"
 
+Song::Song() {
+}
 Song::Song(string name, string firstLine) {
-    int count = 0;
+   songName = name;
+   songLine = firstLine;
+}
+Song::~Song() {
+   //delete songName;
+   //delete songLine;
 }
 string Song::GetName() {
-    return songName;
+   return songName;
 }
 string Song::GetFirstLine() {
-    return songLine;
+   return songLine;
+}
+int Song::GetPlays() {
+   return count;
 }
