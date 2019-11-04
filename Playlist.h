@@ -10,7 +10,7 @@ using namespace std;
 class Playlist
 {
 public:
-   Playlist();
+   Playlist(string playlistName);
    ~Playlist();
 
 private:

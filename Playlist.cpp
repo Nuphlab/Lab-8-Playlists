@@ -4,8 +4,8 @@
 
 using namespace std;
 
-Playlist::Playlist() {
-
+Playlist::Playlist(string playlistName) {
+   name = playlistName;
 }
 Playlist::~Playlist() {
    
