@@ -37,6 +37,9 @@ void ListPlaylists(vector<Playlist>& pList) {
       cout << i + 1 << pList.at(i).GetName() << endl;
    }
 }
+void AddSongToPlaylist() {
+
+}
 
 int main() {
    string userOption;
@@ -62,9 +65,19 @@ int main() {
 
       }
       else if (userOption == "addsp") {
-         ListSongs();
-
-         ListPlaylists();
+         int listIndex;
+         int songIndex;
+         ListPlaylists(playlists);
+         cout << "Pick a playlist index number:" << endl;
+         cin >> listIndex;
+         cin.ignore();
+         cout << playlists.at(listIndex).GetName() << endl;
+         ListSongs(songs);
+         cout << "Pick a song index number:" << endl;
+         cin >> songIndex;
+         cin.ignore();
+         cout << songs.at(songIndex)->GetName() << endl;
+         AddSongToPlaylist();
       }
       else if (userOption == "listp") {
          ListPlaylists(playlists);

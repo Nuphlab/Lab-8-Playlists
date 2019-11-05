@@ -2,6 +2,7 @@
 #ifndef Playlist_h
 #define Playlist_h
 #include <string>
+#include <vector>
 #include <iostream>
 #include "Playlist.h"
 
@@ -15,6 +16,7 @@ public:
 
 private:
    string name;
+   vector<Playlist*> songPtr;
 };
 
 #endif 
