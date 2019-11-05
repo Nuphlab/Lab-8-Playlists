@@ -11,7 +11,7 @@ class Playlist
 {
 public:
    Playlist(string playlistName);
-   ~Playlist();
+   string GetName();
 
 private:
    string name;

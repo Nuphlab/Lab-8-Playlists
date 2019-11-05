@@ -30,10 +30,12 @@ void AddPlaylists(vector<Playlist>& pList) {
    string userIn;
    cout << "Playlist name:" << endl;
    getline(cin, userIn);
-   pList.push_back(Playlist(userIn));
+   pList.push_back(userIn);
 }
-void ListPlaylists(const vector<Playlist>& pList) {
-   //for (int i = 0; )
+void ListPlaylists(vector<Playlist>& pList) {
+   for (int i = 0; i < pList.size(); ++i) {
+      cout << i + 1 << pList.at(i).GetName() << endl;
+   }
 }
 
 int main() {
@@ -60,10 +62,15 @@ int main() {
 
       }
       else if (userOption == "addsp") {
-         
+         ListSongs();
+
+         ListPlaylists();
       }
       else if (userOption == "listp") {
-
+         ListPlaylists(playlists);
+         for (int i = 0; i < playlists.size(); ++i) {
+            playlists.at(i).GetName();
+         }
       }
       else if (userOption == "play") {
 

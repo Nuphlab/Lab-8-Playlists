@@ -7,6 +7,6 @@ using namespace std;
 Playlist::Playlist(string playlistName) {
    name = playlistName;
 }
-Playlist::~Playlist() {
-   
+string Playlist::GetName() {
+   return name;
 }
