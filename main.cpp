@@ -22,7 +22,12 @@ void AddSong(vector<Song*>& newSong) {
 }
 void ListSongs(vector<Song*>& newSong) {
    for (int i = 0; i < newSong.size(); ++i) {
-      cout << newSong.at(i)->GetName() << ": \"" << newSong.at(i)->GetFirstLine() << "\", " << newSong.at(i)->GetPlays() << " Play(s)." <<  endl;
+      cout << i << ": " << newSong.at(i)->GetName() << ": \"" << newSong.at(i)->GetFirstLine() << "\", " << newSong.at(i)->GetPlays() << " Play(s)." <<  endl;
+   }
+}
+void ListSingleSong(vector<Song*>& newSong) {
+   for (int i = 0; i < newSong.size(); ++i) {
+      cout << i << ": " << newSong.at(i)->GetName() << endl;
    }
 }
 
@@ -34,11 +39,8 @@ void AddPlaylists(vector<Playlist>& pList) {
 }
 void ListPlaylists(vector<Playlist>& pList) {
    for (int i = 0; i < pList.size(); ++i) {
-      cout << i + 1 << pList.at(i).GetName() << endl;
+      cout << i << ": " << pList.at(i).GetName() << endl;
    }
-}
-void AddSongToPlaylist() {
-
 }
 
 int main() {
@@ -72,12 +74,19 @@ int main() {
          cin >> listIndex;
          cin.ignore();
          cout << playlists.at(listIndex).GetName() << endl;
-         ListSongs(songs);
+         ListSingleSong(songs);
          cout << "Pick a song index number:" << endl;
          cin >> songIndex;
          cin.ignore();
          cout << songs.at(songIndex)->GetName() << endl;
-         AddSongToPlaylist();
+         cout << songs.at(songIndex);
+         //Below compiles, and I'm using it to build an object with a pointer and name. 
+         Playlist obj1 = new Playlist(playlists.at(listIndex).GetName(), songs);
+         cout << obj1.GetName();
+         //I want to put it into the object selected in the vector of Playlist objects.
+         //playlists.at(listIndex) = new Playlist(playlists.at(listIndex).GetName(), songs.at(songIndex));
+         //playlists.at(listIndex).AddSongPtr(songs.at(songIndex));
+         //cout << playlists.at(listIndex).GetSong() << endl;
       }
       else if (userOption == "listp") {
          ListPlaylists(playlists);
