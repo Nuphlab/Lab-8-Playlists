@@ -3,19 +3,22 @@
 Song::Song() {
 }
 Song::Song(string name, string firstLine) {
-   songName = name;
-   songLine = firstLine;
+	songName = name;
+	songLine = firstLine;
 }
 Song::~Song() {
-   //delete songName;
-   //delete songLine;
+	//delete songName;
+	//delete songLine;
 }
 string Song::GetName() {
-   return songName;
+	return songName;
 }
 string Song::GetFirstLine() {
-   return songLine;
+	return songLine;
 }
 int Song::GetPlays() {
-   return count;
+	return count;
+}
+void Song::AddToCount() {
+	++count;
 }
