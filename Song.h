@@ -8,16 +8,17 @@ using namespace std;
 
 class Song {
 public:
-    Song();
-    Song(string song, string firstLine);
-    ~Song();
-    string GetName();
-    string GetFirstLine();
-    int GetPlays();
+	Song();
+	Song(string song, string firstLine);
+	~Song();
+	string GetName();
+	string GetFirstLine();
+	int GetPlays();
+	void AddToCount();
 private:
-    string songName;
-    string songLine;
-    int count = 0;
+	string songName;
+	string songLine;
+	int count;
 };
 
 #endif 
