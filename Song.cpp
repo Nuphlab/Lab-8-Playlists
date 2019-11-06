@@ -5,6 +5,7 @@ Song::Song() {
 Song::Song(string name, string firstLine) {
 	songName = name;
 	songLine = firstLine;
+	count = 0;
 }
 Song::~Song() {
 	//delete songName;
