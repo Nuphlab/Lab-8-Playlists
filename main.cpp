@@ -42,6 +42,16 @@ void ListPlaylists(vector<Playlist>& pList) {
       cout << i << ": " << pList.at(i).GetName() << endl;
    }
 }
+void RemovePlaylist(int indexNumber, vector<Playlist>& playlist) {
+   for (int i = 0; i < playlist.size(); ++i) {
+      if (i == indexNumber) {
+         playlist.erase(playlist.begin() + i);
+      }
+   }
+}
+void RemovePlaylistSong(int indexNumber, int songIndexNumber, vector<Playlist>& playlist, vector<Song*>& song) {
+   //complete this function
+}
 
 int main() {
    string userOption;
@@ -104,9 +114,24 @@ int main() {
          }*/
       }
       else if (userOption == "remp") {
-
+         int index;
+         ListPlaylists(playlists);
+         cout << "Pick a playlist index number to remove:" << endl;
+         cin >> index;
+         RemovePlaylist(index, playlists);
       }
       else if (userOption == "remsp") {
+         int index;
+         int songIndex;
+         ListPlaylists(playlists);
+         cout << "Pick a playlist index number:" << endl;
+         cin >> index;
+         cin.ignore();
+         ListSingleSong(songs);
+         cout << "Pick a song index number to remove:" << endl;
+         cin >> songIndex;
+         cin.ignore();
+         RemovePlaylistSong(index, songIndex, playlists, songs);
 
       }
       else if (userOption == "remsl") {
@@ -145,6 +170,8 @@ int main() {
       cin >> userOption;
       cin.ignore();
    }
+   //delete songs;
+   //delete playlists;
    cout << "Goodbye!" << endl;
 
    return 0;
