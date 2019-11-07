@@ -11,10 +11,8 @@ Playlist::Playlist(string playlistName, vector<Song*> playlistPtr) {
    name = playlistName;
    songPtr = playlistPtr;
 }
-/*void Playlist: GetSong(vector<Song*> pointerToSong) {
-songPtr = pointerToSong;
-return songPtr;
-} */
+Playlist::~Playlist() {
+}
 string Playlist::GetName() {
    return name;
 }
@@ -34,4 +32,11 @@ Song* Playlist::GetPtr(int index) {
 }
 int Playlist::GetSize() {
    return songPtr.size();
+}
+void Playlist::RemovePlaylistSong(int songIndexNumber, vector<Song*>& song) {
+   for (int i = 0; i < song.size()) {
+      if (i == songIndexNumber) {
+         delete song.at(songIndexNumber);
+      }
+   }
 }

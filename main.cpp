@@ -49,9 +49,12 @@ void RemovePlaylist(int indexNumber, vector<Playlist>& playlist) {
       }
    }
 }
-void RemovePlaylistSong(int indexNumber, int songIndexNumber, vector<Playlist>& playlist, vector<Song*>& song) {
+/*void RemovePlaylistSong(int indexNumber, int songIndexNumber, vector<Playlist>& playlist, vector<Song*>& song) {
    //complete this function
-}
+   /*Song* tempSong;
+   tempSong = playlist.at(indexNumber).GetPtr(songIndexNumber);
+   delete tempSong; 
+}*/
 
 int main() {
    string userOption;
@@ -131,7 +134,7 @@ int main() {
          cout << "Pick a song index number to remove:" << endl;
          cin >> songIndex;
          cin.ignore();
-         RemovePlaylistSong(index, songIndex, playlists, songs);
+         playlists.at(index).RemovePlaylistSong(songIndex, songs);
 
       }
       else if (userOption == "remsl") {
