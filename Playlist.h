@@ -12,19 +12,20 @@ using namespace std;
 class Playlist
 {
 public:
-   Playlist(string playlistName);
-   Playlist(string playlistName, vector<Song*> playlistPtr);
-   ~Playlist();
-   string GetName();
-   void AddSongToList(Song* song);
-   void GetSongLines();
-   Song* GetPtr(int index);
-   int GetSize();
-   int NumberOfSongs();
-   void RemovePlaylistSong(int songIndexNumber, vector<Song*>& song);
+	Playlist(string playlistName);
+	Playlist(string playlistName, vector<Song*> playlistPtr);
+	~Playlist();
+	string GetName();
+	void AddSongToList(Song* song);
+	void GetSongLines();
+	Song* GetPtr(int index);
+	int GetSize();
+	int NumberOfSongs();
+	void ListSingleSong();
+	void RemovePlaylistSong(int index);
 private:
-   string name;
-   vector<Song*> songPtr;
+	string name;
+	vector<Song*> songPtr;
 };
 
 #endif 
