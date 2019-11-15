@@ -8,8 +8,6 @@ Song::Song(string name, string firstLine) {
    count = 0;
 }
 Song::~Song() {
-   //delete songName;
-   //delete songLine;
 }
 string Song::GetName() {
    return songName;

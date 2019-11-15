@@ -45,17 +45,11 @@ void ListPlaylists(vector<Playlist>& pList) {
 void RemovePlaylist(int indexNumber, vector<Playlist>& playlist) {
    for (unsigned int i = 0; i < playlist.size(); ++i) {
       if (i == indexNumber) {
+         // Frees memory
          playlist.erase(playlist.begin() + i);
       }
    }
 }
-/*void RemovePlaylistSong(int indexNumber, int songIndexNumber, vector<Playlist>& playlist, vector<Song*>& song) {
-//complete this function
-*/
-/*Song* tempSong;
-tempSong = playlist.at(indexNumber).GetPtr(songIndexNumber);
-delete tempSong;
-}*/
 
 int main() {
    string userOption;
@@ -78,7 +72,6 @@ int main() {
       }
       else if (userOption == "addp") {
          AddPlaylists(playlists);
-
       }
       else if (userOption == "addsp") {
          int listIndex;
@@ -117,6 +110,7 @@ int main() {
          cout << "Pick a playlist index number to remove:" << endl;
          cin >> index;
          cin.ignore();
+         // Frees memory
          RemovePlaylist(index, playlists);
       }
       else if (userOption == "remsp") {
@@ -130,6 +124,7 @@ int main() {
          cout << "Pick a song index number to remove:" << endl;
          cin >> songIndex;
          cin.ignore();
+         // Frees memory
          playlists.at(index).RemovePlaylistSong(songIndex);
       }
       else if (userOption == "remsl") {
@@ -139,15 +134,10 @@ int main() {
          cin >> songIndex;
          cin.ignore();
          for (int i = 0; i < playlists.size(); ++i) {
+            // Frees memory
             playlists.at(i).CheckAndRemoveAll(songs.at(songIndex)->GetName());
-         } 
-         /* for (int i = 0; i < playlist.size(); ++i) {
-               for (int j = 0; j < songs.size(); ++j) {
-                  if (playlists.at(i).songs.at(j)->GetName() == songs.at(songIndex).GetName()) {
-                     playlists.at(i).
-                  }
-               }
-         }*/
+         }
+         // Frees memory
          delete songs.at(songIndex);
          songs.erase(songs.begin() + songIndex);
       }
@@ -163,7 +153,6 @@ int main() {
          cout << "remsl    Removes a song from the library (and all playlists)" << endl;
          cout << "options  Prints this options menu" << endl;
          cout << "quit     Quits the program" << endl << endl;
-
       }
       else {
          if (userOption != "add" && userOption != "list" && userOption != "addp" && userOption != "addsp" && userOption != "listp" && userOption != "play" && userOption != "remp" && userOption != "remsp" && userOption != "remsl" && userOption != "options" && userOption != "quit") {

@@ -35,6 +35,7 @@ int Playlist::GetSize() {
    return songPtr.size();
 }
 void Playlist::RemovePlaylistSong(int index) {
+   // Frees memory
    songPtr.erase(songPtr.begin() + index);
 }
 void Playlist::ListSingleSong() {
@@ -45,6 +46,7 @@ void Playlist::ListSingleSong() {
 void Playlist::CheckAndRemoveAll(string name) {
    for (int i = 0; i < songPtr.size(); ++i) {
       if (songPtr.at(i)->GetName() == name) {
+         // Frees memory
          songPtr.erase(songPtr.begin() + i);
       }
    }

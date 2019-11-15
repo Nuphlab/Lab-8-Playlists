@@ -1,9 +1,9 @@
-#pragma once
 #ifndef Song_h
 #define Song_h
 #include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
 
 class Song {

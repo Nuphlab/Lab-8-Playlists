@@ -1,4 +1,3 @@
-#pragma once
 #ifndef Playlist_h
 #define Playlist_h
 #include <string>
