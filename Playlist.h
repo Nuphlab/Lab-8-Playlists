@@ -11,7 +11,7 @@ using namespace std;
 class Playlist
 {
 public:
-   Playlist(string playlistName);
+   Playlist(string playlistName = "none", vector<Song*> = nullptr);
    Playlist(string playlistName, vector<Song*> playlistPtr);
    ~Playlist();
    string GetName();
