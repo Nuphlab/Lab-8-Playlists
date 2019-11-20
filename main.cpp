@@ -45,7 +45,6 @@ void ListPlaylists(vector<Playlist>& pList) {
 void RemovePlaylist(int indexNumber, vector<Playlist>& playlist) {
    for (unsigned int i = 0; i < playlist.size(); ++i) {
       if (i == indexNumber) {
-         // Frees memory
          playlist.erase(playlist.begin() + i);
       }
    }
@@ -110,7 +109,6 @@ int main() {
          cout << "Pick a playlist index number to remove:" << endl;
          cin >> index;
          cin.ignore();
-         // Frees memory
          RemovePlaylist(index, playlists);
       }
       else if (userOption == "remsp") {
@@ -124,7 +122,6 @@ int main() {
          cout << "Pick a song index number to remove:" << endl;
          cin >> songIndex;
          cin.ignore();
-         // Frees memory
          playlists.at(index).RemovePlaylistSong(songIndex);
       }
       else if (userOption == "remsl") {
@@ -134,7 +131,6 @@ int main() {
          cin >> songIndex;
          cin.ignore();
          for (int i = 0; i < playlists.size(); ++i) {
-            // Frees memory
             playlists.at(i).CheckAndRemoveAll(songs.at(songIndex)->GetName());
          }
          // Frees memory
