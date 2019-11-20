@@ -4,8 +4,7 @@
 
 using namespace std;
 
-Playlist::Playlist(string playlistName) {
-   name = playlistName;
+Playlist::Playlist() {
 }
 Playlist::Playlist(string playlistName, vector<Song*> playlistPtr) {
    name = playlistName;
