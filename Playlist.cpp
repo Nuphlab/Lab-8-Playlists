@@ -5,6 +5,8 @@
 using namespace std;
 
 Playlist::Playlist() {
+   name = "none";
+   songPtr = nullptr;
 }
 Playlist::Playlist(string playlistName, vector<Song*> playlistPtr) {
    name = playlistName;
